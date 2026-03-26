@@ -75,6 +75,19 @@ public class Multiplication
 }
 
 [TestClass]
+public class Division
+{
+    [TestMethod]
+    public void Divide_Valid_Hao()
+    {
+        Assert.AreEqual(1.5, Program.Divide("3", "2"));
+        Assert.AreEqual(5, Program.Divide("10", "2")); 
+    }
+
+    [TestMethod]
+    public void Divide_Invalid_Hao()
+    {
+        Assert.ThrowsException<FormatException>(() => Program.Divide("1", "a"));
     }
 
     [TestMethod]
@@ -83,6 +96,7 @@ public class Multiplication
         Assert.ThrowsException<ArgumentNullException>(() => Program.Divide("1", null));
     }
 }
+
 
 [TestClass]
 public class Power
